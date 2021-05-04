@@ -1,0 +1,9 @@
+select a.nome as 'Alunos e Professores', a.cidade as 'Cidade'
+from alunos a inner join historico h on
+	a.ra = h.num_ra
+where a.cidade like '%mirim%'
+UNION
+select p.nome as 'Alunos e Professores', p.cidade as 'Cidade'
+from professor p inner join historico h on
+	p.codigoprofessor = h.cod_professor
+where p.cidade like '%mirim%'
